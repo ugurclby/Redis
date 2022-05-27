@@ -45,7 +45,10 @@ namespace InMemoryApp.Controllers
             ViewData["Callback"] = reasonValue;
             return View();
         }
-
+        public ActionResult Test2()
+        {
+            return PartialView();
+        }
         public T Test<T>(T testsinif)
         {
             return testsinif;

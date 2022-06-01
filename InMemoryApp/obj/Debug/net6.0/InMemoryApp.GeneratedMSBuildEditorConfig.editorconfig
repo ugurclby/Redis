@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ugur-\source\repos\RedisInMemory\InMemoryApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ugur-/source/repos/RedisInMemory/InMemoryApp/Views/DistributedCacheRedis/ImageCache.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpYnV0ZWRDYWNoZVJlZGlzXEltYWdlQ2FjaGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ugur-/source/repos/RedisInMemory/InMemoryApp/Views/DistributedCacheRedis/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzdHJpYnV0ZWRDYWNoZVJlZGlzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fm7C85sdUkGrhSI5kzOsCR7+8urQaaBtItpYlxxMzng=",
+  "Hash": "wnb7XD+nHu4J32YuZUW0OVW+vEYxr2he6ySybSPphs8=",
   "Source": "InMemoryApp",
   "BasePath": "_content/InMemoryApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ugur-\\source\\repos\\RedisInMemory\\InMemoryApp\\wwwroot\\images\\testresim.jpg",
+      "SourceId": "InMemoryApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ugur-\\source\\repos\\RedisInMemory\\InMemoryApp\\wwwroot\\",
+      "BasePath": "_content/InMemoryApp",
+      "RelativePath": "images/testresim.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\testresim.jpg"
     },
     {
       "Identity": "C:\\Users\\ugur-\\source\\repos\\RedisInMemory\\InMemoryApp\\wwwroot\\js\\site.js",

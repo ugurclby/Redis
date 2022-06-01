@@ -1,3 +1,22 @@
-﻿@ViewData["Name"].ToString()
+﻿
+@{
+    var product = ViewData["Product"] as Product; 
+    var product2 = ViewData["Product2"] as Product; 
+
+}
+
+@*@ViewData["Name"].ToString()
+@ViewData["SurName"].ToString()*@
+
+<div>
+    <input class="form-control" type="text" value="@product.Id" />
+    <input class="form-control" type="text" value="@product.Name" />
+    <input class="form-control" type="text" value="@product.Price" />
+    <br />
+    <input class="form-control" type="text" value="@product2.Id" />
+    <input class="form-control" type="text" value="@product2.Name" />
+    <input class="form-control" type="text" value="@product2.Price" />
+    
+</div>
 
 @Html.ActionLink("sil","Remove","DistributedCacheRedis")

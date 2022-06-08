@@ -1,0 +1,19 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "LinkedListType"; 
+}
+
+<h1>LinkedListType</h1>
+ 
+<a asp-action="LinkedListFirstDelete">Baştan Sil</a>
+<form method="post" asp-action="LinkedListAdd" enctype="application/x-www-form-urlencoded"> 
+    <input type="text" name="data" class="form-control"/>
+    <button type="submit">Kaydet</button> 
+</form>   
+
+ @foreach (var item in Model)
+        {
+         <h1>@item <a asp-controller="RedisStack" asp-action="LinkedListDelete" asp-route-data="@item" >sil</a></h1>
+        }    
+
+

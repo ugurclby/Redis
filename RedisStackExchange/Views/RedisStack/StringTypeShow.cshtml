@@ -1,0 +1,10 @@
+﻿@using RedisStackExchange.Models
+@{
+    var sonuc = ViewData["redistest"] as RedisTest;
+}
+@ViewData["name"]
+@ViewData["katılımcı"]
+@ViewData["range"]
+@ViewData["length"]
+
+@sonuc.ID @sonuc.Name @sonuc.SurName

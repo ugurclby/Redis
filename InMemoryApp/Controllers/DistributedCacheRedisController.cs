@@ -13,7 +13,7 @@ namespace InMemoryApp.Controllers
         {
             _distributedCache = distributedCache;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             // Basit Tiplerin Cache atılması
             //_distributedCache.SetString("name", "uğur", new DistributedCacheEntryOptions { AbsoluteExpiration = DateTime.Now.AddSeconds(60) });

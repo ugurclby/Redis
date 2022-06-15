@@ -1,0 +1,23 @@
+﻿@using static RedisStackExchange.Controllers.RedisStackController
+@model HashSet<SortedModel>
+@{
+    ViewData["Title"] = "SortedSetType";
+}
+
+<h1>SortedSetType</h1> 
+
+ 
+  
+<form method="post" asp-action="SortedSetAdd" enctype="application/x-www-form-urlencoded"> 
+    <input type="text" name="data" class="form-control"/>
+    <input type="number" name="score" class="form-control"/>
+    <button type="submit">Kaydet</button> 
+</form>   
+
+ @foreach (var item in Model)
+        {
+         <h1>@item.Element : @item.Score <a asp-controller="RedisStack" asp-action="SortedSetDelete" asp-route-data="@item.Element" >sil</a></h1>
+        }    
+
+
+    

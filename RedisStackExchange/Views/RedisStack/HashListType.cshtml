@@ -1,0 +1,22 @@
+﻿
+
+@model HashSet<string>
+
+@{
+    ViewData["Title"] = "HashListType";
+}
+
+<h1>HashListType</h1>
+  
+<form method="post" asp-action="HashListAdd" enctype="application/x-www-form-urlencoded"> 
+    <input type="text" name="data" class="form-control"/>
+    <button type="submit">Kaydet</button> 
+</form>   
+
+ @foreach (var item in Model)
+        {
+         <h1>@item <a asp-controller="RedisStack" asp-action="HashListDelete" asp-route-data="@item" >sil</a></h1>
+        }    
+
+
+    

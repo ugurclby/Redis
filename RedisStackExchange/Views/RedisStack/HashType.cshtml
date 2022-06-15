@@ -1,0 +1,23 @@
+﻿@model Dictionary<string,string>
+ 
+@{
+    ViewData["Title"] = "HashType";
+}
+
+<h1>HashType</h1>
+
+
+  
+<form method="post" asp-action="HashTypeAdd" enctype="application/x-www-form-urlencoded"> 
+    <input type="number" name="key" class="form-control"/>
+    <input type="text" name="val" class="form-control"/>
+    <button type="submit">Kaydet</button> 
+</form>   
+
+ @foreach (var item in Model)
+        {
+         <h1>@item.Key : @item.Value <a asp-controller="RedisStack" asp-action="HashDelete" asp-route-data="@item.Key" >sil</a></h1>
+        }    
+
+
+    

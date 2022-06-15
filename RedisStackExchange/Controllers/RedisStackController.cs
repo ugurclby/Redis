@@ -84,6 +84,101 @@ namespace RedisStackExchange.Controllers
             db.ListLeftPop("liste");
 
             return RedirectToAction("LinkedListType");
+        } 
+
+
+        public IActionResult HashListType() // Redis tarafında set sınıfına karşılık gelir.
+        {
+            HashSet<string> model = new HashSet<string>();
+
+            if (db.KeyExists("hashliste"))
+            {
+                db.SetMembers("hashliste").ToList().ForEach(x=> model.Add(x));
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult HashListAdd(string data)
+        {
+            var sonuc = db.SetAdd("hashliste", data);
+            db.KeyExpire("hashliste", TimeSpan.FromMinutes(1));
+
+            return RedirectToAction("HashListType");
+        }
+
+        public IActionResult HashListDelete(string data)
+        {
+            db.SetRemove("hashliste", data);
+
+            return RedirectToAction("HashListType");
+        }
+
+
+        public class SortedModel
+        {
+            public double Score { get; set; }
+            public string Element { get; set; }
+        }
+
+        public IActionResult SortedSetType() 
+        {
+            HashSet<SortedModel> model = new HashSet<SortedModel>();
+
+            if (db.KeyExists("sortedliste"))
+            {
+                var sonucWithScore = db.SortedSetRangeByScoreWithScores("sortedliste");
+                var sonuc2 = db.SortedSetScan("sortedliste").ToList();
+
+                db.SortedSetScan("sortedliste" ).ToList().ForEach(x => model.Add(new SortedModel() { Element=x.Element,Score=x.Score}));
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult SortedSetAdd(string data,int score)
+        {
+            var sonuc = db.SortedSetAdd("sortedliste", data, score);
+            db.KeyExpire("sortedliste", TimeSpan.FromMinutes(1));
+
+            return RedirectToAction("SortedSetType");
+        }
+
+        public IActionResult SortedSetDelete(string data)
+        {
+            db.SortedSetRemove("sortedliste", data); 
+
+            return RedirectToAction("SortedSetType");
+        }
+
+
+        public IActionResult HashType() // Dictionary tipine karşılık gelir
+        {
+            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();      
+
+            if (db.KeyExists("hashliste"))
+            {
+                  db.HashGetAll("hashliste").ToList().ForEach(x => keyValuePairs.Add(x.Name, x.Value)); 
+            }
+
+            return View(keyValuePairs);
+        }
+
+        [HttpPost]
+        public IActionResult HashTypeAdd(string key, string val)
+        {
+            var sonuc = db.HashSet("hashliste", key, val); 
+
+            return RedirectToAction("HashType");
+        }
+
+        public IActionResult HashDelete(string data)
+        {
+            db.HashDelete("hashliste", data);
+
+            return RedirectToAction("HashType");
         }
 
 
